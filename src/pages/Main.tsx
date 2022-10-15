@@ -2,7 +2,7 @@ import { CatDetail } from '@components/main';
 import React from 'react';
 
 const MainPage = () => {
-  return <CatDetail />;
+  return <div>main page</div>;
 };
 
 export default MainPage;
