@@ -2,6 +2,8 @@ import React, { ReactNode } from 'react';
 import Back from './Back';
 import { LayoutWrapper } from './Layout.style';
 import TabBar from './TabBar';
+import { css } from '@emotion/css';
+
 interface Props {
   children: ReactNode;
   hasTab: boolean;
@@ -12,7 +14,13 @@ const AppLayout = ({ children, hasTab, hasBack }: Props) => {
     <>
       <LayoutWrapper style={{ paddingBottom: hasTab ? '60px' : '' }}>
         {hasBack && <Back />}
-        <div style={{ padding: 8 }}>{children}</div>
+        <div
+          className={css`
+            padding: 8px;
+          `}
+        >
+          {children}
+        </div>
       </LayoutWrapper>
       {hasTab && <TabBar />}
     </>
