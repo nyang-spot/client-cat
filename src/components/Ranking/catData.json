@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "description": "우리 고양이 착하고 밥도 잘먹고~~",
+    "likes": 23
+  },
+  {
+    "id": 2,
+    "description": "고양이 잘 돌봐주세요!!",
+    "likes": 34
+  },
+  { "id": 3, "description": "고양이 귀여워요!!", "likes": 45 }
+]
