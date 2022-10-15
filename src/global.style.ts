@@ -16,6 +16,7 @@ export const globalStyle = css`
     display: grid;
     place-items: center;
     overflow: auto;
+    background-color:#fafafa;
   }
   * {
     box-sizing: border-box;
