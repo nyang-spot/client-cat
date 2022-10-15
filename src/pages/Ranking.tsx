@@ -1,9 +1,12 @@
+import Ranking from '@components/Ranking';
 import React from 'react';
 
-const RankingPage = () =>{
+const RankingPage = () => {
   return (
-    <div>Vote Page</div>
-  )
-}
+    <div>
+      <Ranking />
+    </div>
+  );
+};
 
 export default RankingPage;
