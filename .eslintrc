@@ -8,6 +8,7 @@
   "plugins": ["simple-import-sort", "prettier", "@typescript-eslint"],
   "parser": "@typescript-eslint/parser",
   "rules": {
-    "prettier/prettier": "off"
+    "prettier/prettier": "off",
+    "react/no-unknown-property": ["error", { "ignoer": ["css"] }]
   }
 }
