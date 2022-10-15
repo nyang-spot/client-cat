@@ -1,0 +1,19 @@
+{
+  "presets": [["react-app", { "flow": false, "typescript": true }], ["@emotion/babel-preset-css-prop"]],
+  "plugins": [
+    [
+      "@emotion/babel-plugin-jsx-pragmatic",
+      {
+        "export": "jsx",
+        "import": "to_avoidprepending/** @jsxImportSource @emotion/react */",
+        "module": "@emotion/react"
+      }
+    ],
+    [
+      "@babel/plugin-transform-react-jsx",
+      {
+        "pragma": "to_avoidprepending/** @jsxImportSource @emotion/react */"
+      }
+    ]
+  ]
+}
