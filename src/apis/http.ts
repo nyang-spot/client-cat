@@ -1,4 +1,4 @@
-import { User } from '@modles/user';
+import { User } from '@models/user';
 import axios from 'axios';
 
 const host = process.env.REACT_APP_API_URL;
