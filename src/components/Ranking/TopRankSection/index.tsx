@@ -9,9 +9,9 @@ import {
   TopRankDescriptionContainer,
   TopRankLike,
 } from '@components/Ranking/TopRankSection/TopRankSection.styled';
+import CateResponse from '@modles/catResponse';
 
-// TODO: Models타입이 확정나면 cats의 타입을 지정해줘야합니다.
-const TopRankSection = ({ cats }: { cats: Array<any> }) => {
+const TopRankSection = ({ cats }: { cats: Array<CateResponse> }) => {
   return (
     <section>
       <RankTitleContainer>
@@ -41,7 +41,7 @@ const TopRankSection = ({ cats }: { cats: Array<any> }) => {
                     marginRight: 5,
                   }}
                 />
-                {cat.likes}
+                {cat._count.likes}
               </TopRankLike>
               <TopRankBlurBox />
             </TopRankDescriptionContainer>

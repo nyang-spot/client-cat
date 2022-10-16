@@ -8,9 +8,9 @@ import {
   PopularRankList,
 } from '@components/Ranking/PopularRankSection/PopularRankSection.styled';
 import { RankLocationHighlight, RankSubTitle, RankTitleContainer } from '@components/Ranking/Rank.style';
+import CateResponse from '@modles/catResponse';
 
-// TODO: Models타입이 확정나면 cats의 타입을 지정해줘야합니다.
-const PopularRankSection = ({ cats }: { cats: Array<any> }) => {
+const PopularRankSection = ({ cats }: { cats: Array<CateResponse> }) => {
   return (
     <section>
       <RankTitleContainer>
@@ -48,7 +48,7 @@ const PopularRankSection = ({ cats }: { cats: Array<any> }) => {
                   marginRight: 5,
                 }}
               />
-              <PopularRankLikes>{cat.likes}</PopularRankLikes>
+              <PopularRankLikes>{cat._count.likes}</PopularRankLikes>
             </div>
           </div>
         </PopularRankList>
