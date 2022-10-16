@@ -14,13 +14,7 @@ const AppLayout = ({ children, hasTab, hasBack }: Props) => {
     <>
       <LayoutWrapper style={{ paddingBottom: hasTab ? '60px' : '' }}>
         {hasBack && <Back />}
-        <div
-          className={css`
-            padding: 8px;
-          `}
-        >
-          {children}
-        </div>
+        <div>{children}</div>
       </LayoutWrapper>
       {hasTab && <TabBar />}
     </>

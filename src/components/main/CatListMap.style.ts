@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
-  position: relative;
-  height: calc(100vh - 60px);
+  width: 100%;
+  height: 100%;
 `;
