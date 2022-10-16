@@ -29,7 +29,7 @@ const LoginLayout = () => {
         localStorage.setItem('user', stringified);
         navi('/main');
       })
-      .catch(error => {
+      .catch(() => {
         setAlertOn(true);
 
         clearTimeout(timeout);
