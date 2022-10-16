@@ -9,7 +9,7 @@ import {
   TopRankDescriptionContainer,
   TopRankLike,
 } from '@components/Ranking/TopRankSection/TopRankSection.styled';
-import CateResponse from '@modles/catResponse';
+import CateResponse from '@models/catResponse';
 
 const TopRankSection = ({ cats }: { cats: Array<CateResponse> }) => {
   return (
