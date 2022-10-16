@@ -2,12 +2,19 @@
   {
     "id": 1,
     "description": "우리 고양이 착하고 밥도 잘먹고~~",
+    "imageUrl": "https://image.zdnet.co.kr/2022/04/26/13a49853492e4bbafe07f8cdc22b0c16.jpg",
     "likes": 23
   },
   {
     "id": 2,
     "description": "고양이 잘 돌봐주세요!!",
+    "imageUrl": "https://www.sciencetimes.co.kr/wp-content/uploads/2021/01/253761_web.jpg",
     "likes": 34
   },
-  { "id": 3, "description": "고양이 귀여워요!!", "likes": 45 }
+  {
+    "id": 3,
+    "description": "고양이 귀여워요!!",
+    "imageUrl": "https://newsimg.hankookilbo.com/cms/articlerelease/2021/05/07/54c0ca3d-8e9b-41cf-a45a-3048ce9b14f5.png",
+    "likes": 45
+  }
 ]
