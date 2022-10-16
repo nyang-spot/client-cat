@@ -26,7 +26,7 @@ const PopularRankSection = ({ cats }: { cats: Array<CateResponse> }) => {
       {cats.slice(2, cats.length).map(cat => (
         <PopularRankList key={cat.id}>
           <PopularRankImage>
-            <img src={cat.imageUrl} height='100%' width='100%' />
+            <img src={cat.image} height='100%' width='100%' />
           </PopularRankImage>
           <div
             style={{

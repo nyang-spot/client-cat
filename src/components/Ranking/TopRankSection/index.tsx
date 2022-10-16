@@ -32,7 +32,7 @@ const TopRankSection = ({ cats }: { cats: Array<CateResponse> }) => {
       >
         {cats.slice(0, 2).map(cat => (
           <TopRankContent key={cat.id}>
-            <img src={cat.imageUrl} height='100%' />
+            <img src={cat.image} height='100%' />
             <TopRankDescriptionContainer>
               <TopRankDescription>{cat.description}</TopRankDescription>
               <TopRankLike>
