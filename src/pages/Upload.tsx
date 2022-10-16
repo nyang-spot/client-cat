@@ -1,8 +1,10 @@
-import React, { useEffect, useState, useMemo} from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import defaultImg from '../assets/images/defaultImg.png';
 import UploadMap from '@components/upload/UploadMap';
 import { ImageLoader, UploadForm } from './Upload.style';
+import { useMutation } from 'react-query';
+import http from '@apis/http';
 
 interface CatData {
   imageUrl: File | null;
@@ -24,6 +26,24 @@ const UploadPage = () => {
     },
     address: '서울특별시 강남구 역삼동 858',
   });
+  
+  const postCat = async ()=> {
+    const formData = new FormData();
+    const location = form.address.split(' ').slice(0, 2).join(' ');
+    formData.append('catImage', form.imageUrl!);
+    formData.append('description', form.description);
+    formData.append('latitude', `${form.position.latitude}`);
+    formData.append('longitude', `${form.position.longitude}`);
+    formData.append('location', location);
+    await http.post('/cats', formData,{
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+  }
+  const { isSuccess, isError, mutate } = useMutation(postCat);
+
+    
   const [preview, setPreview] = useState<string | null>('');
 
   const navigate = useNavigate();
@@ -50,7 +70,8 @@ const UploadPage = () => {
   const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
     // 등록 form state 보내준다.
-    navigate('/');
+    mutate()
+    // navigate('/');
   };
 
   useEffect(() => {
@@ -98,4 +119,5 @@ const UploadPage = () => {
     </UploadForm>
   );
 };
+
 export default UploadPage;
