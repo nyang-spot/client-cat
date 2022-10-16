@@ -1,11 +1,10 @@
 import login_btn from '../../assets/kakao_icon.png';
-
 import { ReactComponent as LogoImg } from '../../assets/logo_img.svg';
 
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import axios from 'axios';
+import http from '@apis/http';
 
 import { Alert, LogoImgWrapper, DescriptionWrapper, LoginBtn, LoginBtnWrapper, LoginWrapper } from './Login.style';
 
@@ -22,14 +21,14 @@ const LoginLayout = () => {
   const handleLogin = async (e: React.MouseEvent) => {
     e.preventDefault();
     /// 임시로 받는 데이터 (현재 단일 요청에, 리패치를 요하는 데이터가 아니므로 useQuery 사용X)
-    await axios
-      .get('http://13.125.74.165:3000/login')
+    await http
+      .get('/login')
       .then(response => {
         const stringified = JSON.stringify(response.data);
         localStorage.setItem('user', stringified);
         navi('/main');
       })
-      .catch(error => {
+      .catch(() => {
         setAlertOn(true);
 
         clearTimeout(timeout);

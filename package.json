@@ -61,5 +61,5 @@
     "prettier": "^2.7.1",
     "react-app-rewired": "^2.2.1"
   },
-  "proxy": ""
+  "proxy": "http://13.125.74.165:3000"
 }
