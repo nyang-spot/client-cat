@@ -23,9 +23,9 @@ const LoginLayout = () => {
     e.preventDefault();
     /// 임시로 받는 데이터 (현재 단일 요청에, 리패치를 요하는 데이터가 아니므로 useQuery 사용X)
     await axios
-      .get('/login')
+      .get('http://13.125.74.165:3000/login')
       .then(response => {
-        const stringified = JSON.stringify(response);
+        const stringified = JSON.stringify(response.data);
         localStorage.setItem('user', stringified);
         navi('/main');
       })

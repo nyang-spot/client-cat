@@ -75,10 +75,11 @@ export const Alert = styled.div`
   border-radius: 12px;
   background: #f8f9fa;
 
-  animation: ${hide} 3s;
-
   color: gray;
+
   font-size: 12px;
+
+  animation: ${hide} 3s;
 `;
 
 export const LoginWrapper = styled.main`
