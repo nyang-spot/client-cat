@@ -1,6 +1,6 @@
 import { AxiosResponse } from 'axios';
 import { useQuery, UseQueryOptions } from 'react-query';
-import { Cat } from '@modles/cat';
+import { Cat } from '@models/cat';
 import { getCatDetail } from '@apis/main';
 
 

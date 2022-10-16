@@ -1,5 +1,5 @@
 import { postLike } from '@apis/main';
-import { Cat } from '@modles/cat';
+import { Cat } from '@models/cat';
 import { AxiosError } from 'axios';
 import { useMutation, useQueryClient } from 'react-query';
 
