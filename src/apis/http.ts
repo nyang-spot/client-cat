@@ -15,7 +15,7 @@ http.interceptors.request.use(function (config) {
   if (!string_data) return config;
 
   const { id }: User = JSON.parse(string_data);
-  config.headers.Authorization = `id=${id}`;
+  config.headers.Authorization = id;
 
   return config;
 });
