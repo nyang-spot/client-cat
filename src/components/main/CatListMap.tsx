@@ -32,7 +32,7 @@ const CatListMap = ({ onClickMarker }: Props) => {
   }, [mapRef]);
 
   useEffect(() => {
-    if (markers?.length === 0) {
+    if (markers?.length === 0 && !markers) {
       return;
     }
 
