@@ -24,7 +24,8 @@
       "@pages/*": ["pages/*"],
       "@apis/*": ["apis/*"],
       "@assets/*": ["assets/*"]
-    }
+    },
+    "jsxImportSource": "@emotion/react"
   },
   "include": ["src"]
 }

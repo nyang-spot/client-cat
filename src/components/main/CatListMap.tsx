@@ -1,7 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Container } from '@components/main/CatListMap.style';
 
-const CatListMap = () => {
+interface Props {
+  onClickMarker: (id: number) => void;
+}
+
+const CatListMap = ({ onClickMarker }: Props) => {
   const [myLocation, setMyLocation] = useState({
     latitude: 37.498095,
     longitude: 127.02761,
@@ -27,6 +31,11 @@ const CatListMap = () => {
       markerRef.current = new naver.maps.Marker({
         position: new naver.maps.LatLng(marker.position.latitude, marker.position.longitude),
         map: mapRef.current,
+      });
+
+      naver.maps.Event.addListener(markerRef.current, 'click', () => {
+        mapRef.current.panTo(new naver.maps.LatLng(marker.position.latitude, marker.position.longitude));
+        onClickMarker(marker.id);
       });
     });
   }, []);
