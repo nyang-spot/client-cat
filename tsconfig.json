@@ -17,14 +17,15 @@
     "jsx": "react-jsx",
     "baseUrl": "./src",
     "paths": {
-      "@components/*":["components/*"],
+      "@components/*": ["components/*"],
       "@modles/*": ["models/*"],
       "@hooks/*": ["hooks/*"],
       "@utils/*": ["utils/*"],
       "@pages/*": ["pages/*"],
       "@apis/*": ["apis/*"],
-      "@assets/*":["assets/*"]
-    }
+      "@assets/*": ["assets/*"]
+    },
+    "jsxImportSource": "@emotion/react"
   },
   "include": ["src"]
 }

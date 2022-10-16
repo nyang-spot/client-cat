@@ -6,6 +6,7 @@ const LoginPage = React.lazy(() => import('@pages/Login'));
 const MainPage = React.lazy(() => import('@pages/Main'));
 const RankingPage = React.lazy(() => import('@pages/Ranking'));
 const UploadPage = React.lazy(()=> import('@pages/Upload'));
+
 const App = () => {
   return (
     <Routes>
