@@ -1,16 +1,21 @@
 import React from 'react';
+import { Cat } from '@modles/cat';
 import { CatInfoBox, Container, Description, Image, ImageWrapper, LikeButton } from './CatDetail.style';
 
-const CatDetail = () => {
+interface Props {
+  cat: Cat;
+}
+
+const CatDetail = ({ cat }: Props) => {
   return (
     <Container>
       <CatInfoBox>
         <ImageWrapper>
-          <Image />
+          <Image src={cat.imageUrl} />
         </ImageWrapper>
-        <Description>이 고양이는 미묘입니다.</Description>
+        <Description>{cat.description}</Description>
       </CatInfoBox>
-      <LikeButton>Like</LikeButton>
+      {!cat.isLiked && <LikeButton>Like</LikeButton>}
     </Container>
   );
 };

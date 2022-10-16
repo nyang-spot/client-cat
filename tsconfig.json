@@ -24,8 +24,12 @@
       "@pages/*": ["pages/*"],
       "@apis/*": ["apis/*"],
       "@assets/*": ["assets/*"]
+<<<<<<< HEAD
     },
     "jsxImportSource": "@emotion/react"
+=======
+    }
+>>>>>>> 60e5768e63056ddac8e4f88d348bab2e63e29833
   },
   "include": ["src"]
 }
