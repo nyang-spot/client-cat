@@ -70,8 +70,8 @@ const UploadPage = () => {
   const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
     // 등록 form state 보내준다.
-    mutate()
-    // navigate('/');
+    mutate();
+    isSuccess && navigate('/');
   };
 
   useEffect(() => {

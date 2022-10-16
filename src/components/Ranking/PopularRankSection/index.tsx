@@ -8,7 +8,7 @@ import {
   PopularRankList,
 } from '@components/Ranking/PopularRankSection/PopularRankSection.styled';
 import { RankLocationHighlight, RankSubTitle, RankTitleContainer } from '@components/Ranking/Rank.style';
-import CateResponse from '@modles/catResponse';
+import CateResponse from '@models/catResponse';
 
 const PopularRankSection = ({ cats }: { cats: Array<CateResponse> }) => {
   return (

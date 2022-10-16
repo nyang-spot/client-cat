@@ -3,7 +3,7 @@
 import PopularRankSection from '@components/Ranking/PopularRankSection';
 import { RankTitle, RankLocationHighlight } from '@components/Ranking/Rank.style';
 import TopRankSection from '@components/Ranking/TopRankSection';
-import CateResponse from '@modles/catResponse';
+import CateResponse from '@models/catResponse';
 import data from './catData.json';
 
 const Ranking = () => {
