@@ -1,7 +1,5 @@
 export interface Marker {
-  catId: number;
-  position: {
-    latitude: number;
-    longitude: number;
-  };
+  id: number;
+  latitude: number;
+  longitude: number;
 }

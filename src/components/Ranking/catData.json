@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "description": "seed 1",
+    "image": "이미지파일?",
+    "latitude": 37.4981,
+    "longitude": 127.028,
+    "_count": {
+      "likes": 1
+    }
+  },
+  {
+    "id": 5,
+    "description": "sdf",
+    "image": "http://localhost:3000/1665935170669.png",
+    "latitude": 11.11333,
+    "longitude": 12.2233,
+    "_count": {
+      "likes": 0
+    }
+  },
+  {
+    "id": 6,
+    "description": "sdf",
+    "image": "http://13.125.74.165:3000/1665935606801.png",
+    "latitude": 11.11333,
+    "longitude": 12.2233,
+    "_count": {
+      "likes": 0
+    }
+  },
+  {
+    "id": 4,
+    "description": "sdf",
+    "image": "http://localhost:3000/1665935105519.png",
+    "latitude": 11.11333,
+    "longitude": 12.2233,
+    "_count": {
+      "likes": 0
+    }
+  },
+  {
+    "id": 3,
+    "description": "sdf",
+    "image": "http://localhost:3000/1665934650780.png",
+    "latitude": 11.11,
+    "longitude": 12.22,
+    "_count": {
+      "likes": 0
+    }
+  }
+]
