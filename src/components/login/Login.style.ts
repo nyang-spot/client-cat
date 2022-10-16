@@ -1,4 +1,4 @@
-import { keyframes } from '@emotion/react';
+import { css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 
 const show = keyframes`
@@ -128,4 +128,18 @@ export const LoginBtn = styled.button`
   :hover {
     box-shadow: 0 0 10px rgba(160, 160, 160, 0.7);
   }
+`;
+
+export const Alert = styled.div`
+  position: absolute;
+  top: 12%;
+
+  display: flex;
+  align-items: center;
+
+  height: 38px;
+  padding: 2px 10px;
+
+  border-radius: 12px;
+  background: #f8f9fa;
 `;
