@@ -78,8 +78,7 @@ export const LoginWrapper = styled.main`
   justify-content: center;
   align-items: center;
 
-  width: 100%;
-  height: 100%;
+  height: 100vh;
   max-width: 480px;
   padding: 0 42px;
 
