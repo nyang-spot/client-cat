@@ -1,4 +1,4 @@
-import { css, keyframes } from '@emotion/react';
+import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 import Background from '../../assets/login_background.svg';
 
@@ -12,18 +12,6 @@ const show = keyframes`
     opacity: 1;
     transform: translateY(0)
   }
-`;
-
-const gradient = keyframes`
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
 `;
 
 const rotate = keyframes`
