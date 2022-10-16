@@ -1,5 +1,6 @@
 import { css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
+import Background from '../../assets/login_background.svg';
 
 const show = keyframes`
   0% {
@@ -40,6 +41,46 @@ const rotate = keyframes`
   }
 `;
 
+const hide = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  10%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  70%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+`;
+
+export const Alert = styled.div`
+  position: absolute;
+  top: 5%;
+
+  display: flex;
+  align-items: center;
+
+  height: 38px;
+  padding: 10px 30px;
+
+  border-radius: 12px;
+  background: #f8f9fa;
+
+  animation: ${hide} 3s;
+
+  color: gray;
+  font-size: 12px;
+`;
+
 export const LoginWrapper = styled.main`
   position: relative;
 
@@ -53,33 +94,25 @@ export const LoginWrapper = styled.main`
   max-width: 480px;
   padding: 0 42px;
 
-  background: linear-gradient(-45deg, #f5efe6, #e8dfca, #aebdca, #7895b2);
-  background-size: 400% 400%;
+  background: url(${Background});
+  background-size: cover;
 
   overflow: hidden;
-
-  animation: ${gradient} 7s ease-in-out infinite;
 `;
 
 export const LogoImgWrapper = styled.div`
-  height: 320px;
-  margin: 10% 0;
+  width: 100%;
   animation: ${rotate} 7s ease-in-out infinite;
-
-  > svg {
-    height: 100%;
-  }
 `;
 
 export const LogoWrapper = styled.div`
-  height: 50px;
+  display: flex;
+  justify-content: center;
+
+  width: 240px;
   margin-bottom: 10px;
 
   animation: ${show} 0.6s;
-
-  > svg {
-    height: 100%;
-  }
 `;
 
 export const DescriptionWrapper = styled.span`
@@ -90,7 +123,7 @@ export const DescriptionWrapper = styled.span`
   margin-bottom: 8px;
 
   font-size: 12px;
-  color: #f8f9fa;
+  color: #000;
 
   animation: ${show} 0.6s;
 
@@ -101,7 +134,7 @@ export const DescriptionWrapper = styled.span`
 
     border: none;
 
-    background: #f8f9fa;
+    background: #000;
     opacity: 0.4;
   }
 `;
@@ -111,7 +144,7 @@ export const LoginBtn = styled.button`
   justify-content: center;
   align-items: center;
 
-  width: 100%;
+  width: 92%;
   height: 45px;
   border-radius: 4px;
 
@@ -130,16 +163,13 @@ export const LoginBtn = styled.button`
   }
 `;
 
-export const Alert = styled.div`
+export const LoginBtnWrapper = styled.div`
   position: absolute;
-  top: 12%;
+  bottom: 3%;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
 
-  height: 38px;
-  padding: 2px 10px;
-
-  border-radius: 12px;
-  background: #f8f9fa;
+  width: 100%;
 `;
