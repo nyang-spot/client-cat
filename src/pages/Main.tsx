@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { CatDetail, CatListMap } from '@components/main';
 import { Container } from '@pages/Main.style';
-import { useCatDetail } from '@apis/useCatDetail';
+import { useCatDetail } from '@hooks/useCatDetail';
 
 const MainPage = () => {
   const [selectedCat, setSelectedCat] = useState<number | null>(null);
