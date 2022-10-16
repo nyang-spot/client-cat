@@ -18,7 +18,7 @@
     "baseUrl": "./src",
     "paths": {
       "@components/*": ["components/*"],
-      "@modles/*": ["models/*"],
+      "@models/*": ["models/*"],
       "@hooks/*": ["hooks/*"],
       "@utils/*": ["utils/*"],
       "@pages/*": ["pages/*"],

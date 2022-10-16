@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Container } from '@components/main/CatListMap.style';
-import { useMarkers } from '@apis/useMarkers';
+import { useMarkers } from '@hooks/useMarkers';
 
 interface Props {
   onClickMarker: (id: number) => void;
