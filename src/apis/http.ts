@@ -18,6 +18,6 @@ http.interceptors.request.use(function (config) {
   config.headers.Authorization = id;
 
   return config;
-});
+})
 
 export default http;
