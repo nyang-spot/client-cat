@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { Cat } from '@modles/cat';
+import { Cat } from '@models/cat';
 import { CatInfoBox, Container, Description, Image, ImageWrapper, LikeButton } from './CatDetail.style';
 import { UseLike } from '@hooks/useLike';
 
