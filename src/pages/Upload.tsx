@@ -1,91 +1,57 @@
-import React, { useEffect, useState, useMemo } from 'react';
-import styled from '@emotion/styled';
+import React, { useEffect, useState, useMemo} from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import defaultImg from '../assets/images/defaultImg.png';
-
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  row-gap: 3rem;
-  padding: 1em;
-
-  textarea {
-    font-size: 1rem;
-    font-family: inherit;
-    padding: 0.75rem;
-    width: '100%';
-    height: 7rem;
-    border: solid 0.15rem gray;
-    border-radius: 5px;
-    outline: none;
-    resize: none;
-    &:focus {
-      color: $oc-teal-7;
-      border: solid 0.15rem orange;
-      border-radius: 5px;
-    }
-    &::placeholder {
-      font-size: 0.75rem;
-    }
-  }
-
-  button {
-    padding: 0.5em 1em;
-    border-radius: 5px;
-    color: white;
-    background-color: orange;
-
-    :disabled {
-      background-color: gray;
-    }
-  }
-`;
-
-const ImageLoader = styled.label`
-  width: 150px;
-  height: 150px;
-  &:hover {
-    cursor: pointer;
-  }
-  img {
-    width: inherit;
-    height: inherit;
-    border-radius: 5px;
-    object-fit: cover;
-  }
-
-  input {
-    display: none;
-  }
-`;
+import UploadMap from '@components/upload/UploadMap';
+import { ImageLoader, UploadForm } from './Upload.style';
 
 interface CatData {
   imageUrl: File | null;
   description: string;
-  // position: {
-  //   latitude: number;
-  //   longitude: number;
-  // };
-  // address: string;
+  position: {
+    latitude: number;
+    longitude: number;
+  };
+  address: string;
 }
 
 const UploadPage = () => {
   const [form, setForm] = useState<CatData>({
     imageUrl: null,
     description: '',
-    // position: {
-    //   latitude: 0,
-    //   longitude: 0,
-    // },
-    // address: '',
+    position: {
+      latitude: 0,
+      longitude: 0,
+    },
+    address: '서울특별시 강남구 역삼동 858',
   });
   const [preview, setPreview] = useState<string | null>('');
 
   const navigate = useNavigate();
+
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!e.target.files) return;
+
+    const file = e.target.files[0];
+
+    if (!file || file.type.substring(0, 5) !== 'image') return;
+
+    setForm((pre) => {
+      return { ...pre, imageUrl: file ?? null };
+    });
+  };
+
+  const handleDescription = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const { value } = e.target;
+    setForm((pre) => {
+      return { ...pre, description: value };
+    });
+  };
+
+  const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // 등록 form state 보내준다.
+    navigate('/');
+  };
 
   useEffect(() => {
     if (form.imageUrl) {
@@ -98,41 +64,28 @@ const UploadPage = () => {
       setPreview(defaultImg);
     }
   }, [form.imageUrl]);
-  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (!e.target.files) return;
-
-    const file = e.target.files[0];
-
-    if (!file || file.type.substring(0, 5) !== 'image') return;
-
-    setForm((pre: CatData) => {
-      return { ...pre, imageUrl: file ?? 'null' };
-    });
-  };
-
-  const handleDescription = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const { value } = e.target;
-    setForm((pre: CatData) => {
-      return { ...pre, description: value };
-    });
-  };
-
-  const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // 등록 form state 보내준다.
-    navigate('/');
-  };
 
   const formValid = useMemo(() => {
     return Object.values(form).every(data => data);
   }, [form]);
 
+  const addressValid = useMemo(() => {
+    return form.address.split(' ')[1] === '강남구';
+  }, [form]);
+
+ 
   return (
-    <Form onSubmit={handleSubmit}>
+    <UploadForm onSubmit={handleSubmit}>
+      <h2>아이콘을 눌러서 사진을 올려주세요!</h2>
       <ImageLoader>
         <img src={preview ?? defaultImg} alt='preview' />
         <input type='file' accept='image/*' onChange={handleImageUpload} />
       </ImageLoader>
+      <UploadMap
+        setForm={setForm}
+        addressValid={addressValid}
+        address={form.address}
+      />
       <textarea
         name='description'
         cols={30}
@@ -140,9 +93,9 @@ const UploadPage = () => {
         placeholder='어떤 고양이였는지 설명해 주세요!'
         autoFocus
         onChange={handleDescription}
-      ></textarea>
-      <button disabled={!formValid}>등록</button>
-    </Form>
+      />
+      <button disabled={!formValid || !addressValid}>등록</button>
+    </UploadForm>
   );
 };
 export default UploadPage;
