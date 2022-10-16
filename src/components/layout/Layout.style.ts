@@ -28,11 +28,16 @@ export const LayoutTabBar = styled.section`
 
 export const BackButton = styled.span`
   position: fixed;
-  top:12px;
-  left:12px;
+  top: 12px;
   z-index: 10;
   width: 24px;
   height: 7px;
+  left: 12px;
+  /*미디어 쿼리 적용 */
+  @media (min-width: 480px) {
+    left: 50%;
+    transform: translate(-230px, 0);
+  }
   cursor: pointer;
 `;
 
