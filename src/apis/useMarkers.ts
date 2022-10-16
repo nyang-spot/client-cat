@@ -1,13 +1,10 @@
 import { Marker } from '@modles/marker';
 import { useQuery } from 'react-query';
-import axios, { AxiosResponse } from 'axios';
+import { AxiosResponse } from 'axios';
+import http from './http';
 
 const getMarkers = () => {
-  const user = localStorage.getItem('user');
-
-  const userObject = JSON.parse(user!);
-
-  return axios.get('http://13.125.74.165:3000/cats', { headers: { Authorization: userObject.id } });
+  return http.get('/cats');
 };
 
 export const useMarkers = () => {
