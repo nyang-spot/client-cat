@@ -6,12 +6,16 @@ import { PostData } from '@models/postData';
 import { useUpload } from '@hooks/useUpload';
 
 const UploadPage = () => {
+  const defaultLocation = {
+    latitude: 37.498095,
+    longitude: 127.02761,
+  };
   const [form, setForm] = useState<PostData>({
     imageUrl: null,
     description: '',
     position: {
-      latitude: 0,
-      longitude: 0,
+      latitude: defaultLocation.latitude,
+      longitude: defaultLocation.longitude,
     },
     address: '서울특별시 강남구 역삼동 858',
   });
@@ -65,18 +69,18 @@ const UploadPage = () => {
 
   return (
     <UploadForm onSubmit={handleSubmit}>
-      <h2>아이콘을 눌러서 사진을 올려주세요!</h2>
+      <h2>고양이 발견!</h2>
+      <div className='upload-comment'>고양이 아이콘을 눌러서 사진을 업로드 해주세요</div>
       <ImageLoader>
         <img src={preview ?? defaultImg} alt='preview' />
         <input type='file' accept='image/*' onChange={handleImageUpload} />
       </ImageLoader>
-      <UploadMap setForm={setForm} addressValid={addressValid} address={form.address} />
+      <UploadMap setForm={setForm} addressValid={addressValid} address={form.address} defaultLocation={defaultLocation}/>
       <textarea
         name='description'
         cols={30}
         rows={10}
         placeholder='어떤 고양이였는지 설명해 주세요!'
-        autoFocus
         onChange={handleDescription}
       />
       <button disabled={!formValid || !addressValid}>등록</button>
