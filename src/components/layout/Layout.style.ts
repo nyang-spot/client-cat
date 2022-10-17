@@ -41,6 +41,13 @@ export const BackButton = styled.span`
   cursor: pointer;
 `;
 
-export const TabBarItem = styled.li`
+export const TabBarItem = styled.li<{ isActive: boolean }>`
   text-align: center;
+  & p {
+    font-weight: 500;
+    color: ${props => (props.isActive ? props.theme.colors.primary : props.theme.colors.black)};
+  }
+  & svg {
+    fill: ${props => (props.isActive ? props.theme.colors.primary : props.theme.colors.black)};
+  }
 `;
