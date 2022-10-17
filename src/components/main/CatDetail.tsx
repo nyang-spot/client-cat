@@ -1,7 +1,8 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback } from 'react';
 import { Cat } from '@models/cat';
-import { CatInfoBox, Container, Description, Image, ImageWrapper, LikeButton } from './CatDetail.style';
+import { CatInfoBox, Container, Description, Image, ImageWrapper, LikeButton, LikeText } from './CatDetail.style';
 import { UseLike } from '@hooks/useLike';
+import HeartIcon from '@components/Ranking/Icons/HeartIcon';
 
 interface Props {
   cat: Cat;
@@ -13,7 +14,7 @@ const CatDetail = ({ cat }: Props) => {
   const onLike = useCallback(() => {
     likeMutate.mutate(cat.id);
   }, [likeMutate, cat]);
-  
+
   return (
     <Container>
       <CatInfoBox>
@@ -22,7 +23,13 @@ const CatDetail = ({ cat }: Props) => {
         </ImageWrapper>
         <Description>{cat.description}</Description>
       </CatInfoBox>
-      {!cat.isLiked ? <LikeButton onClick={onLike}>Like</LikeButton> : <span>좋아요 : {cat._count.likes}</span>}
+      {!cat.isLiked ? (
+        <LikeButton onClick={onLike}>Like</LikeButton>
+      ) : (
+        <LikeText>
+          <HeartIcon /> {cat._count.likes}
+        </LikeText>
+      )}
     </Container>
   );
 };
