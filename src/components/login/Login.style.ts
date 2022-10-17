@@ -76,9 +76,12 @@ export const LoginWrapper = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 70vh;
+  height: 100vh;
   max-width: 480px;
+  padding: 0 42px;
+  background: url(${Background});
+  background-size: cover;
+
   overflow: hidden;
 `;
 

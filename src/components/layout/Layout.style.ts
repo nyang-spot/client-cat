@@ -18,6 +18,7 @@ export const LayoutTabBar = styled.section`
   height: 60px;
   background-color: white;
   border-top: 1px solid #d9d9d9;
+  z-index: 999;
   & ul {
     height: 100%;
     padding: 12px 24px;

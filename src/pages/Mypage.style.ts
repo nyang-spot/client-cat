@@ -1,6 +1,5 @@
 import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
-import Background from '../../assets/login_background.svg';
 
 const show = keyframes`
   0% {
@@ -78,12 +77,9 @@ export const LoginWrapper = styled.main`
   justify-content: center;
   align-items: center;
 
-  height: 100vh;
+  height: 70vh;
   max-width: 480px;
   padding: 0 42px;
-
-  background: url(${Background});
-  background-size: cover;
 
   overflow: hidden;
 `;
