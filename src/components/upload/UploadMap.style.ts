@@ -31,9 +31,12 @@ export const Container = styled.div`
   }
 
   .address-area {
-    font-size: 14px;
     width: 100%;
     height: 2rem;
+
+    .comment {
+      font-size: 14px;
+    }
   }
 
   .warning {

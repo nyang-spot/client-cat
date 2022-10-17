@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 export const UploadForm = styled.form`
+  color: #40444A;
   font-style: normal;
   display: flex;
   flex-direction: column;
