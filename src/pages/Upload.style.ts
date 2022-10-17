@@ -10,6 +10,7 @@ export const UploadForm = styled.form`
   padding: 1em;
   
   h2 {
+    color: #E8B273;
     font-size: 26px;
   }
 
