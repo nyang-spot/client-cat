@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CatDetail, CatListMap } from '@components/main';
-import { Container } from '@pages/Main.style';
+import { Container, MainTitle, MainTitleHighlight } from '@pages/Main.style';
 import { useCatDetail } from '@hooks/useCatDetail';
 
 const MainPage = () => {
@@ -14,6 +14,9 @@ const MainPage = () => {
 
   return (
     <Container>
+      <MainTitle>
+        <MainTitleHighlight>강남구</MainTitleHighlight> 고양이 보기
+      </MainTitle>
       <CatListMap onClickMarker={onChangeSelectedCat} />
       {cat && selectedCat && <CatDetail cat={cat} />}
     </Container>
