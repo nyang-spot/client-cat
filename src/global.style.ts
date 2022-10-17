@@ -7,8 +7,7 @@ export const globalStyle = css`
     margin: 0;
     width: 100%;
     height: 100%;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
-      Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
   }
   #root {
     width: 100%;
@@ -16,7 +15,7 @@ export const globalStyle = css`
     display: grid;
     place-items: center;
     overflow: auto;
-    background-color:#fafafa;
+    background-color: #fafafa;
   }
   * {
     box-sizing: border-box;
