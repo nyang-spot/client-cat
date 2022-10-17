@@ -9,11 +9,7 @@ const Ranking = () => {
   const { data: cats } = useGetCats();
   if (!cats) return null;
   return (
-    <div
-      style={{
-        padding: 30,
-      }}
-    >
+    <div>
       <RankTitle>
         <RankLocationHighlight>강남구</RankLocationHighlight> 짱 고양이
       </RankTitle>
