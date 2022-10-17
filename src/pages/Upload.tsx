@@ -1,23 +1,12 @@
 import React, { useEffect, useState, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
 import defaultImg from '../assets/images/defaultImg.png';
 import UploadMap from '@components/upload/UploadMap';
 import { ImageLoader, UploadForm } from './Upload.style';
-import { useMutation } from 'react-query';
-import http from '@apis/http';
-
-interface CatData {
-  imageUrl: File | null;
-  description: string;
-  position: {
-    latitude: number;
-    longitude: number;
-  };
-  address: string;
-}
+import { PostData } from '@models/postData';
+import { useUpload } from '@hooks/useUpload';
 
 const UploadPage = () => {
-  const [form, setForm] = useState<CatData>({
+  const [form, setForm] = useState<PostData>({
     imageUrl: null,
     description: '',
     position: {
@@ -26,27 +15,9 @@ const UploadPage = () => {
     },
     address: '서울특별시 강남구 역삼동 858',
   });
-  
-  const postCat = async ()=> {
-    const formData = new FormData();
-    const location = form.address.split(' ').slice(0, 2).join(' ');
-    formData.append('catImage', form.imageUrl!);
-    formData.append('description', form.description);
-    formData.append('latitude', `${form.position.latitude}`);
-    formData.append('longitude', `${form.position.longitude}`);
-    formData.append('location', location);
-    await http.post('/cats', formData,{
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    });
-  }
-  const { isSuccess, isError, mutate } = useMutation(postCat);
+  const uploadMutate = useUpload();
 
-    
   const [preview, setPreview] = useState<string | null>('');
-
-  const navigate = useNavigate();
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!e.target.files) return;
@@ -55,23 +26,21 @@ const UploadPage = () => {
 
     if (!file || file.type.substring(0, 5) !== 'image') return;
 
-    setForm((pre) => {
+    setForm(pre => {
       return { ...pre, imageUrl: file ?? null };
     });
   };
 
   const handleDescription = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const { value } = e.target;
-    setForm((pre) => {
+    setForm(pre => {
       return { ...pre, description: value };
     });
   };
 
   const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // 등록 form state 보내준다.
-    mutate();
-    isSuccess && navigate('/');
+    uploadMutate.mutate(form);
   };
 
   useEffect(() => {
@@ -94,7 +63,6 @@ const UploadPage = () => {
     return form.address.split(' ')[1] === '강남구';
   }, [form]);
 
- 
   return (
     <UploadForm onSubmit={handleSubmit}>
       <h2>아이콘을 눌러서 사진을 올려주세요!</h2>
@@ -102,11 +70,7 @@ const UploadPage = () => {
         <img src={preview ?? defaultImg} alt='preview' />
         <input type='file' accept='image/*' onChange={handleImageUpload} />
       </ImageLoader>
-      <UploadMap
-        setForm={setForm}
-        addressValid={addressValid}
-        address={form.address}
-      />
+      <UploadMap setForm={setForm} addressValid={addressValid} address={form.address} />
       <textarea
         name='description'
         cols={30}
