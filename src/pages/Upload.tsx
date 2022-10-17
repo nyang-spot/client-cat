@@ -42,23 +42,6 @@ const UploadPage = () => {
     });
   };
 
-  const postCat = async ()=> {
-    const formData = new FormData();
-    const location = form.address.split(' ').slice(0, 2).join(' ');
-
-    formData.append('catImage', form.imageUrl!);
-    formData.append('description', form.description);
-    formData.append('latitude', `${form.position.latitude}`);
-    formData.append('longitude', `${form.position.longitude}`);
-    //formData.append('location', location);
-    formData.append('location', 'gannamgu');
-    await http.post('/cats', formData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    });
-  }
-  const { mutate } = useMutation(postCat);
   const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
     uploadMutate.mutate(form);
@@ -86,7 +69,8 @@ const UploadPage = () => {
 
   return (
     <UploadForm onSubmit={handleSubmit}>
-      <h2>아이콘을 눌러서 사진을 올려주세요!</h2>
+      <h2>고양이 발견!</h2>
+      <div className='upload-comment'>고양이 아이콘을 눌러서 사진을 업로드 해주세요</div>
       <ImageLoader>
         <img src={preview ?? defaultImg} alt='preview' />
         <input type='file' accept='image/*' onChange={handleImageUpload} />
@@ -97,7 +81,6 @@ const UploadPage = () => {
         cols={30}
         rows={10}
         placeholder='어떤 고양이였는지 설명해 주세요!'
-        autoFocus
         onChange={handleDescription}
       />
       <button disabled={!formValid || !addressValid}>등록</button>

@@ -2,11 +2,11 @@ import styled from "@emotion/styled";
 
 export const Container = styled.div`
   width: 100%;
-  height: 22rem;
+  height: 21rem;
   
   #map {
     position: relative;
-    height: 17rem;
+    height: 16rem;
 
     :focus {
       outline: none;
