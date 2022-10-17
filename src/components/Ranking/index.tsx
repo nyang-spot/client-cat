@@ -3,11 +3,11 @@
 import PopularRankSection from '@components/Ranking/PopularRankSection';
 import { RankTitle, RankLocationHighlight } from '@components/Ranking/Rank.style';
 import TopRankSection from '@components/Ranking/TopRankSection';
-import CateResponse from '@models/catResponse';
-import data from './catData.json';
+import useGetCats from '@hooks/useGetCats';
 
 const Ranking = () => {
-  const cats = data as CateResponse[];
+  const { data: cats } = useGetCats();
+  if (!cats) return null;
   return (
     <div
       style={{
