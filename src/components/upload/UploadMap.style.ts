@@ -7,6 +7,7 @@ export const Container = styled.div`
   #map {
     position: relative;
     height: 16rem;
+    margin-bottom: 0.5rem;
 
     :focus {
       outline: none;
@@ -30,35 +31,14 @@ export const Container = styled.div`
   }
 
   .address-area {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    font-size: 14px;
     width: 100%;
-    height: 3rem;
-    margin-top: 1rem;
-    padding: 0 0.5rem;
-
-    div {
-      font-size: 16px;
-      width: 70%;
-      margin: 0;
-    }
-
-    img {
-      width: 3rem;
-      height: 3rem;
-
-      &:hover{
-        cursor: pointer;
-      }
-    }
+    height: 2rem;
   }
 
   .warning {
     font-size: 13px;
     color: red;
     height: 1rem;
-    padding: 0 0.5rem;
   }
 `;
