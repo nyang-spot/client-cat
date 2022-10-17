@@ -104,7 +104,9 @@ const UploadMap = ({ setForm, addressValid, address, defaultLocation }: Props) =
         </div>
       </div>
       <div className='address-area'>
-        <div>{address}</div>
+        <div className='comment'>
+          <span className='small'>선택된 지역 : </span> {address}
+        </div>
         {/* <img src={locationLoading ? cat3 : locationImg} onClick={handleLocationButton} /> */}
       </div>
       {addressValid ? '' : <div className='warning'>&#8251; 내 지역의 고양이만 등록할 수 있어요</div>}

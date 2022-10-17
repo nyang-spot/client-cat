@@ -69,21 +69,32 @@ const UploadPage = () => {
 
   return (
     <UploadForm onSubmit={handleSubmit}>
-      <h2>고양이 발견!</h2>
-      <div className='upload-comment'>고양이 아이콘을 눌러서 사진을 업로드 해주세요</div>
-      <ImageLoader>
-        <img src={preview ?? defaultImg} alt='preview' />
-        <input type='file' accept='image/*' onChange={handleImageUpload} />
-      </ImageLoader>
-      <UploadMap setForm={setForm} addressValid={addressValid} address={form.address} defaultLocation={defaultLocation}/>
-      <textarea
-        name='description'
-        cols={30}
-        rows={10}
-        placeholder='어떤 고양이였는지 설명해 주세요!'
-        onChange={handleDescription}
+      <h1><span>새로운</span> 고양이 등록</h1>
+      <div className='comment'>❤️ <span>매력 포인트</span>나 <span>특징</span>을 작성해주세요.</div>
+      <div className='cat-area'>
+        <ImageLoader>
+          <img src={preview ?? defaultImg} alt='preview' />
+          <input type='file' accept='image/*' onChange={handleImageUpload} />
+        </ImageLoader>
+        <textarea
+          name='description'
+          cols={30}
+          rows={10}
+          placeholder='어떤 고양이였나요?'
+          onChange={handleDescription}
+        />
+      </div>
+      <div className='comment'>
+        <div>출몰지역을 선택해주세요.</div>
+        <div className='small'>지도를 움직이면 위치를 변경할 수 있어요!</div>
+      </div>
+      <UploadMap 
+        setForm={setForm} 
+        addressValid={addressValid} 
+        address={form.address} 
+        defaultLocation={defaultLocation}
       />
-      <button disabled={!formValid || !addressValid}>등록</button>
+      <button disabled={!formValid || !addressValid}>등록하기</button>
     </UploadForm>
   );
 };

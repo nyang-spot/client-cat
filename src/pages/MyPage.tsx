@@ -1,5 +1,5 @@
 import React from 'react';
-import { LoginBtnWrapper, LogoImgWrapper, LoginWrapper, DescriptionWrapper } from '@components/login/Login.style';
+import { LoginBtnWrapper, LogoImgWrapper, LoginWrapper, DescriptionWrapper } from '@pages/Mypage.style';
 import { ReactComponent as LogoImg } from '@assets/logo_img.svg';
 
 const MyPage = () => {
