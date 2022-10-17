@@ -15,7 +15,7 @@ const MainPage = () => {
   return (
     <Container>
       <MainTitle>
-        <MainTitleHighlight>강남구</MainTitleHighlight> 고양이 보기
+        <MainTitleHighlight>강남구</MainTitleHighlight> 고양이 결과
       </MainTitle>
       <CatListMap onClickMarker={onChangeSelectedCat} />
       {cat && selectedCat && <CatDetail cat={cat} />}
