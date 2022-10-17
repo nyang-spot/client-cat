@@ -16,7 +16,7 @@ const CatDetail = ({ cat }: Props) => {
     <Container>
       <CatInfoBox>
         <ImageWrapper>
-          <Image src={cat.imageUrl} />
+          <Image src={cat.image} />
         </ImageWrapper>
         <Description>{cat.description}</Description>
       </CatInfoBox>

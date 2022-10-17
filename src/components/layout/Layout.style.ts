@@ -12,10 +12,12 @@ export const LayoutTabBar = styled.section`
   position: fixed;
   width: 100%;
   max-width: 480px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   bottom: 0;
   height: 60px;
-  background-color: #fff;
-  box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
+  background-color: white;
+  border-top: 1px solid #d9d9d9;
   & ul {
     height: 100%;
     padding: 12px 24px;
@@ -50,4 +52,9 @@ export const TabBarItem = styled.li<{ isActive: boolean }>`
   & svg {
     fill: ${props => (props.isActive ? props.theme.colors.primary : props.theme.colors.black)};
   }
+`;
+
+export const TabBarName = styled.p`
+  font-size: 11px;
+  font-weight: 600;
 `;
