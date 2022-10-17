@@ -17,32 +17,19 @@ interface CatData {
 }
 
 const UploadPage = () => {
+  const defaultLocation = {
+    latitude: 37.498095,
+    longitude: 127.02761,
+  }
   const [form, setForm] = useState<CatData>({
     imageUrl: null,
     description: '',
     position: {
-      latitude: 0,
-      longitude: 0,
+      latitude: defaultLocation.latitude,
+      longitude: defaultLocation.longitude,
     },
     address: '서울특별시 강남구 역삼동 858',
   });
-  
-  const postCat = async ()=> {
-    const formData = new FormData();
-    const location = form.address.split(' ').slice(0, 2).join(' ');
-    formData.append('catImage', form.imageUrl!);
-    formData.append('description', form.description);
-    formData.append('latitude', `${form.position.latitude}`);
-    formData.append('longitude', `${form.position.longitude}`);
-    formData.append('location', location);
-    await http.post('/cats', formData,{
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    });
-  }
-  const { isSuccess, isError, mutate } = useMutation(postCat);
-
     
   const [preview, setPreview] = useState<string | null>('');
 
@@ -67,11 +54,31 @@ const UploadPage = () => {
     });
   };
 
+  const postCat = async ()=> {
+    const formData = new FormData();
+    const location = form.address.split(' ').slice(0, 2).join(' ');
+
+    formData.append('catImage', form.imageUrl!);
+    formData.append('description', form.description);
+    formData.append('latitude', `${form.position.latitude}`);
+    formData.append('longitude', `${form.position.longitude}`);
+    //formData.append('location', location);
+    formData.append('location', 'gannamgu');
+    await http.post('/cats', formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+  }
+  const { mutate } = useMutation(postCat);
   const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // 등록 form state 보내준다.
-    mutate();
-    isSuccess && navigate('/');
+
+    mutate(undefined, {
+      onSuccess: () => {
+        navigate('/');
+      },
+    });
   };
 
   useEffect(() => {
@@ -106,6 +113,7 @@ const UploadPage = () => {
         setForm={setForm}
         addressValid={addressValid}
         address={form.address}
+        defaultLocation={defaultLocation}
       />
       <textarea
         name='description'

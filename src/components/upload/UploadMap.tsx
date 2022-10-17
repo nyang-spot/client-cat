@@ -17,18 +17,18 @@ interface Props {
   setForm: React.Dispatch<React.SetStateAction<CatData>>;
   addressValid: boolean;
   address: string;
+  defaultLocation: {
+    latitude: number;
+    longitude: number;
+  }
 }
 
 const UploadMap = ({ 
   setForm,
   addressValid,
-  address
+  address,
+  defaultLocation,
 }: Props) => {
-  const defaultLocation = {
-    latitude: 37.498095,
-    longitude: 127.02761,
-  }
-
   const [clickedMap, setClickedMap] = useState<boolean>(false)
   const [locationLoading, setLocationLoading] = useState<boolean>(false);
 
@@ -37,7 +37,6 @@ const UploadMap = ({
 
   const handleMap = () => {
     const { y, x } = mapRef.current.center;
-    let address = '';
     naver.maps.Service.reverseGeocode(
       {
         coords: new naver.maps.LatLng(y, x),
@@ -50,7 +49,7 @@ const UploadMap = ({
         if (status !== naver.maps.Service.Status.OK) {
           return alert('Something wrong!');
         }
-        address = response.v2.address.jibunAddress;
+        const address = response.v2.address.jibunAddress;
 
         setForm((pre)=> {return {
           ...pre,
@@ -71,7 +70,7 @@ const UploadMap = ({
   useEffect(()=>{
     const handleMapLeave = (e:MouseEvent) => {
       if(ref.current && !ref.current.contains(e.target as Node)) {
-        handleMap()
+        handleMap();
       }
     }
     clickedMap && document.addEventListener('mouseup', handleMapLeave);
