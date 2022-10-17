@@ -42,3 +42,7 @@ export const LikeButton = styled.button`
   background-color: #fabe93;
   color: #fff;
 `;
+
+export const LikeText = styled.span`
+  font-weight: bold;
+`;

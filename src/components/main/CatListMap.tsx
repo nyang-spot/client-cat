@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Container } from '@components/main/CatListMap.style';
 import { useMarkers } from '@hooks/useMarkers';
+import {marker as markerUrl} from '@assets/index';
 
 interface Props {
   onClickMarker: (id: number) => void;
@@ -40,6 +41,10 @@ const CatListMap = ({ onClickMarker }: Props) => {
       markerRef.current = new naver.maps.Marker({
         position: new naver.maps.LatLng(marker.latitude, marker.longitude),
         map: mapRef.current,
+        icon:{
+          url:markerUrl,
+          scaledSize: new naver.maps.Size(49, 59)
+        }
       });
 
       naver.maps.Event.addListener(markerRef.current, 'click', () => {

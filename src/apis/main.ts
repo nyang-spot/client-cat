@@ -11,9 +11,9 @@ export const getCatDetail = (id: number) => {
 };
 
 export const postLike = (id: number) => {
-  return http.post('/like', { id });
+  return http.post(`/cats/${id}/favorite`);
 };
-
+  
 export const postCat = (form: PostData) => {
   const formData = new FormData();
   // const location = form.address.split(' ').slice(0, 2).join(' ');

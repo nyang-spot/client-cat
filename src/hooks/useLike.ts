@@ -1,6 +1,6 @@
 import { postLike } from '@apis/main';
 import { Cat } from '@models/cat';
-import { AxiosError } from 'axios';
+import { AxiosError, AxiosResponse } from 'axios';
 import { useMutation, useQueryClient } from 'react-query';
 
 export const UseLike = () => {
@@ -9,18 +9,22 @@ export const UseLike = () => {
     onMutate: async catId => {
       await queryClient.cancelQueries(['catDetail', catId]); // 쿼리 취소
       // 이전 값 가져옴
-      const previousCat = queryClient.getQueryData<Cat>(['catDetail', catId]);
+      const previousCat = queryClient.getQueryData<AxiosResponse<Cat>>(['catDetail', catId]);
       // 새 값으로 업데이트
       if (previousCat) {
-        const newCat = { ...previousCat, likes: previousCat.likes + 1 };
-        queryClient.setQueryData<Cat>(['catDetail', catId], newCat);
+        const prevLikes = (previousCat.data as unknown as Cat)._count.likes;
+        const newCat = {
+          ...previousCat,
+          data: { ...previousCat.data, _count: { ...previousCat.data._count, likes: prevLikes + 1 }, isLiked: true },
+        };
+        queryClient.setQueryData<AxiosResponse<Cat>>(['catDetail', catId], newCat);
       }
       return { previousCat };
     },
-    onError: (err: AxiosError, catId: number, context?: { previousCat: Cat | undefined }) => {
+    onError: (err: AxiosError, catId: number, context?: { previousCat: AxiosResponse<Cat> | undefined }) => {
       if (context?.previousCat) {
         // error 인 경우 onMutate에서 반환된 값으로 롤백
-        queryClient.setQueryData<Cat>(['catDetail', catId], context.previousCat);
+        queryClient.setQueryData<AxiosResponse<Cat>>(['catDetail', catId], context.previousCat);
       }
     },
     onSettled: catId => {
