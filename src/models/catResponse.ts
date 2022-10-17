@@ -1,4 +1,4 @@
-export default interface CateResponse {
+export default interface CatsResponse {
   id: number;
   latitude: number;
   longitude: number;

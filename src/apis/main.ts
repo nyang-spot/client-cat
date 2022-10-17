@@ -1,4 +1,5 @@
 import { PostData } from '@models/postData';
+import CatsResponse from '@models/catResponse';
 import http from './http';
 
 export const getMarkers = () => {
@@ -26,4 +27,8 @@ export const postCat = (form: PostData) => {
       'Content-Type': 'multipart/form-data',
     },
   });
-};
+
+  export const getCats = async () => {
+  const { data } = await http.get<CatsResponse[]>('/cats');
+  return data;
+  };
