@@ -14,7 +14,11 @@ export const UseLike = () => {
       // 새 값으로 업데이트
       if (previousCat) {
         const prevLikes = (previousCat.data as unknown as Cat)._count.likes;
-        const newCat = { ...previousCat, data: { ...previousCat.data, _count: { likes: prevLikes + 1 } } };
+        const newCat = {
+          ...previousCat,
+          data: { ...previousCat.data, _count: { ...previousCat.data._count, likes: prevLikes + 1 }, isLiked: true },
+        };
+        console.log(newCat);
         queryClient.setQueryData<AxiosResponse<Cat>>(['catDetail', catId], newCat);
       }
       return { previousCat };
