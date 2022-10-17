@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { LayoutTabBar, TabBarItem } from './Layout.style';
-import { ReactComponent as HomeIcon } from '@assets/home.svg';
-import { ReactComponent as RankIcon } from '@assets/rank.svg';
-import { ReactComponent as UploadIcon } from '@assets/upload.svg';
-import { ReactComponent as PersonIcon } from '@assets/person.svg';
+import { LayoutTabBar, TabBarItem, TabBarName } from './Layout.style';
+import MapIcon from '@components/layout/Icons/MapIcon';
+import RankingIcon from '@components/layout/Icons/RankingIcon';
+import UploadIcon from '@components/layout/Icons/UploadIcon';
+import MyPageIcon from '@components/layout/Icons/MyPageIcon';
 
 const TabBar = () => {
   const { pathname } = useLocation();
@@ -13,27 +13,27 @@ const TabBar = () => {
     () => [
       {
         path: '/main',
-        icon: <HomeIcon />,
-        text: 'HOME',
-        isAcitve: pathname === '/main',
+        icon: <MapIcon />,
+        text: '메인',
+        isActive: pathname === '/main',
       },
       {
         path: '/ranking',
-        icon: <RankIcon />,
-        text: 'RANK',
-        isAcitve: pathname === '/ranking',
+        icon: <RankingIcon />,
+        text: '짱 고양이',
+        isActive: pathname === '/ranking',
       },
       {
         path: '/upload',
         icon: <UploadIcon />,
-        text: 'UPLOAD',
-        isAcitve: pathname === '/upload',
+        text: '업로드',
+        isActive: pathname === '/upload',
       },
       {
         path: '/my-page',
-        icon: <PersonIcon />,
-        text: 'MY',
-        isAcitve: pathname === '/my-page',
+        icon: <MyPageIcon />,
+        text: '집사',
+        isActive: pathname === '/my-page',
       },
     ],
     [pathname]
@@ -43,9 +43,9 @@ const TabBar = () => {
       <ul>
         {TabItem.map((v, i) => (
           <Link key={i} to={v.path}>
-            <TabBarItem isActive={v.isAcitve}>
+            <TabBarItem isActive={v.isActive}>
               {v.icon}
-              <p>{v.text}</p>
+              <TabBarName>{v.text}</TabBarName>
             </TabBarItem>
           </Link>
         ))}
