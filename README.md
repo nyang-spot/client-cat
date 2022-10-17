@@ -1,8 +1,4 @@
 
-<div align="center">
-    아아..
-</div>
-
 # 🐈 냥스팟
 <img src="https://i.imgur.com/uBrgjuL.png" width="80%" /> 
 
@@ -21,12 +17,12 @@
 
 
 ## 💻 Preview : 주요 화면
-
-<img src="https://i.imgur.com/g8ZjG4N.png" height="340" />
-<img src="https://i.imgur.com/7gf5dcV.png" height="340" />
-<img src="https://i.imgur.com/q1hXv2Y.png" height="340" />
-<img src="https://i.imgur.com/vD9c7UQ.png" height="340" />
-
+<div style="display:inline">
+<img src="https://i.imgur.com/g8ZjG4N.png" height="350" />
+<img src="https://i.imgur.com/7gf5dcV.png" height="350" />
+<img src="https://i.imgur.com/q1hXv2Y.png" height="350" />
+<img src="https://i.imgur.com/vD9c7UQ.png" height="350" />
+</div>
 
 
 ### 1. 로그인
@@ -55,8 +51,6 @@
  검색 구역의 가장 인기 있는 고양이의 리스트를 사용자에게 표시합니다.
  
 
-<br
-
 ### 4.업로드
 
 길고양이 위치를 지정하여 사진 업로드 
@@ -64,8 +58,7 @@
 지도 중앙에 마커를 이용해서 손쉽게 고양이의 위치를 지정할 수 있습니다.
 
 
-
-<br/>
+<br />
 
 
 ## ⛏️ Skill Set: 기술 스택
