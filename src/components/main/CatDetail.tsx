@@ -9,9 +9,9 @@ interface Props {
 /* 업로드 구현 완료 후 테스트 필요 */
 const CatDetail = ({ cat }: Props) => {
   const likeMutate = UseLike();
-  const onLike = useCallback(() => {
+  const onLike = () => {
     likeMutate.mutate(cat.id);
-  }, [likeMutate]);
+  };
   return (
     <Container>
       <CatInfoBox>
@@ -20,7 +20,7 @@ const CatDetail = ({ cat }: Props) => {
         </ImageWrapper>
         <Description>{cat.description}</Description>
       </CatInfoBox>
-      {!cat.isLiked ? <LikeButton onClick={onLike}>Like</LikeButton> : <span>좋아요 : {cat.likes}</span>}
+      {!cat.isLiked ? <LikeButton onClick={onLike}>Like</LikeButton> : <span>좋아요 : {cat._count.likes}</span>}
     </Container>
   );
 };
