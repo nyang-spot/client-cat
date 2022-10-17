@@ -9,8 +9,12 @@ export const UploadForm = styled.form`
   row-gap: 2rem;
   padding: 1em;
   
+  h2 {
+    font-size: 26px;
+  }
+
   textarea {
-    font-size: 1rem;
+    font-size: 16px;
     font-family: inherit;
     padding: 1rem;
     width: 100%;
@@ -25,11 +29,14 @@ export const UploadForm = styled.form`
     }
 
     &::placeholder {
-      font-size: 1.25rem;
+      font-size: 16px;
     }
   }
 
   button {
+    font-size: 16px;
+    width: 10rem;
+    height: 3rem;
     padding: 0.5em 1em;
     border-radius: 5px;
     color: white;

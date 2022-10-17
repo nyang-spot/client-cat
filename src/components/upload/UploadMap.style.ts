@@ -35,7 +35,7 @@ export const Container = styled.div`
     padding: 0 0.5rem;
 
     div {
-      font-size: 1.25rem;
+      font-size: 16px;
       width: 70%;
       margin: 0;
     }
@@ -51,7 +51,7 @@ export const Container = styled.div`
   }
 
   .warning {
-    font-size: 0.75rem;
+    font-size: 13px;
     color: red;
     height: 1rem;
     padding: 0 0.5rem;
