@@ -27,8 +27,9 @@ export const postCat = (form: PostData) => {
       'Content-Type': 'multipart/form-data',
     },
   });
+};
 
-  export const getCats = async () => {
+export const getCats = async () => {
   const { data } = await http.get<CatsResponse[]>('/cats');
   return data;
-  };
+};
