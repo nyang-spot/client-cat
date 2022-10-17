@@ -10,7 +10,6 @@ export const UseLike = () => {
       await queryClient.cancelQueries(['catDetail', catId]); // 쿼리 취소
       // 이전 값 가져옴
       const previousCat = queryClient.getQueryData<AxiosResponse<Cat>>(['catDetail', catId]);
-      console.log('prev: ', previousCat);
       // 새 값으로 업데이트
       if (previousCat) {
         const prevLikes = (previousCat.data as unknown as Cat)._count.likes;
@@ -18,7 +17,6 @@ export const UseLike = () => {
           ...previousCat,
           data: { ...previousCat.data, _count: { ...previousCat.data._count, likes: prevLikes + 1 }, isLiked: true },
         };
-        console.log(newCat);
         queryClient.setQueryData<AxiosResponse<Cat>>(['catDetail', catId], newCat);
       }
       return { previousCat };

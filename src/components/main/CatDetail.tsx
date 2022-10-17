@@ -3,6 +3,7 @@ import { Cat } from '@models/cat';
 import { CatInfoBox, Container, Description, Image, ImageWrapper, LikeButton, LikeText } from './CatDetail.style';
 import { UseLike } from '@hooks/useLike';
 import HeartIcon from '@components/Ranking/Icons/HeartIcon';
+import defaultImg from '../../assets/images/defaultImg.png';
 
 interface Props {
   cat: Cat;
@@ -15,11 +16,13 @@ const CatDetail = ({ cat }: Props) => {
     likeMutate.mutate(cat.id);
   }, [likeMutate, cat]);
 
+  const isValidUrl = cat?.image.includes('http');
+
   return (
     <Container>
       <CatInfoBox>
         <ImageWrapper>
-          <Image src={cat.image} />
+          <Image src={isValidUrl ? cat?.image ?? defaultImg : defaultImg} />
         </ImageWrapper>
         <Description>{cat.description}</Description>
       </CatInfoBox>
