@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Container } from './UploadMap.style';
-import { logo, cat3, locationImg } from '../../assets';
+import { marker, cat3, locationImg } from '../../assets';
 import { PostData } from '@models/postData';
 
 interface Props {
@@ -100,7 +100,7 @@ const UploadMap = ({ setForm, addressValid, address, defaultLocation }: Props) =
         onTouchStart={handleMapClicked}
       >
         <div className='marker'>
-          <img src={logo} />
+          <img src={marker} />
         </div>
       </div>
       <div className='address-area'>
