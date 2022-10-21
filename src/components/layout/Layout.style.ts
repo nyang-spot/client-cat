@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
 
 export const LayoutWrapper = styled.main`
   position: relative;
@@ -44,18 +45,21 @@ export const BackButton = styled.span`
   cursor: pointer;
 `;
 
-export const TabBarItem = styled.li<{ isActive: boolean }>`
-  text-align: center;
-  & p {
-    font-weight: 500;
-    color: ${props => (props.isActive ? props.theme.colors.primary : props.theme.colors.black)};
-  }
-  & svg {
-    fill: ${props => (props.isActive ? props.theme.colors.primary : props.theme.colors.black)};
-  }
-`;
-
 export const TabBarName = styled.p`
   font-size: 11px;
   font-weight: 600;
+`;
+
+export const CustomLink = styled(NavLink)`
+  &.active {
+    li {
+      & p {
+        font-weight: 500;
+        color: ${({ theme }) => theme.colors.primary};
+      }
+      & svg {
+        fill: ${({ theme }) => theme.colors.primary};
+      }
+    }
+  }
 `;

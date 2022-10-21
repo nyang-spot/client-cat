@@ -10,7 +10,7 @@ const Icon = ({ type, width, height, fill = 'black' }: Props) => {
   const GetIcon = ICONS[type];
   let prop = {};
   width ? (prop = { ...prop, width: width }) : { ...prop };
-  width ? (prop = { ...prop, height: height }) : { ...prop };
+  height ? (prop = { ...prop, height: height }) : { ...prop };
   return <GetIcon fill={fill} {...prop} />;
 };
 

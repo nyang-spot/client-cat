@@ -3,18 +3,17 @@ import { ReactComponent as UploadIcon } from '@assets/icons/upload.svg';
 import { ReactComponent as RankIcon } from '@assets/icons/rank.svg';
 import { ReactComponent as PersonIcon } from '@assets/icons/person.svg';
 
-export type IconType = 'MAP' | 'UPLOAD' | 'RANK' | 'PERSON';
-export const ICONS  = {
+export type IconType = keyof typeof ICONS;
+export const ICONS= {
   MAP: MapIcon,
   UPLOAD: UploadIcon,
   RANK: RankIcon,
-  PERSON:PersonIcon,
+  PERSON: PersonIcon,
 } as const;
 
-
-const getImagePath = (path:string) => `@assets/images/${path}`;
+const getImagePath = (path: string) => `@assets/images/${path}`;
 export const IMAGE_PATH = {
-  DEFAULT:getImagePath('defaultImg.png'),
-  KAKAO:getImagePath('kakao_icon.png'),
-  LOCATION:getImagePath('locationImg.png'),
+  DEFAULT: getImagePath('defaultImg.png'),
+  KAKAO: getImagePath('kakao_icon.png'),
+  LOCATION: getImagePath('locationImg.png'),
 } as const;
