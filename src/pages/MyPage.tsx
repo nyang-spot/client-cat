@@ -1,12 +1,12 @@
 import React from 'react';
 import { LoginBtnWrapper, LogoImgWrapper, LoginWrapper, DescriptionWrapper } from '@pages/Mypage.style';
-import { ReactComponent as LogoImg } from '@assets/logo_img.svg';
+import Icon from '@components/icon';
 
 const MyPage = () => {
   return (
     <LoginWrapper>
       <LogoImgWrapper>
-        <LogoImg fill='#000' />
+        <Icon type='LOGO' fill='black' />
       </LogoImgWrapper>
       <LoginBtnWrapper>
         <DescriptionWrapper>

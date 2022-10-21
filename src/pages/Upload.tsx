@@ -4,6 +4,7 @@ import UploadMap from '@components/upload/UploadMap';
 import { ImageLoader, UploadForm } from './Upload.style';
 import { PostData } from '@models/postData';
 import { useUpload } from '@hooks/useUpload';
+import { IMAGE_PATH } from '@utils/assets';
 
 const UploadPage = () => {
   const defaultLocation = {
@@ -73,7 +74,7 @@ const UploadPage = () => {
       <div className='comment'>❤️ <span>매력 포인트</span>나 <span>특징</span>을 작성해주세요.</div>
       <div className='cat-area'>
         <ImageLoader>
-          <img src={preview ?? defaultImg} alt='preview' />
+          <img src={preview ?? IMAGE_PATH.KAKAO} alt='preview' />
           <input type='file' accept='image/*' onChange={handleImageUpload} />
         </ImageLoader>
         <textarea

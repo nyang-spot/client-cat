@@ -1,10 +1,4 @@
-/* eslint-disable react/react-in-jsx-scope */
-
-import { SVGProps } from 'react';
-
-const BrickIcon = (props: SVGProps<SVGSVGElement>) => {
-  return (
-    <svg {...props} xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 25 25' fill='none'>
+<svg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 25 25' fill='none'>
       <path
         d='M24.741 7.51807L0.259033 11.5V18.2514H0.261811C0.253478 18.3549 0.351394 18.4563 0.56945 18.5799C1.07431 18.866 7.39931 22.2507 7.89792 22.4958C8.51945 22.8007 8.89862 22.8382 9.42987 22.5736C9.86459 22.357 22.7882 15.509 23.966 14.8833C24.5653 14.5646 24.7618 14.3896 24.7292 14.2452H24.7417V7.51807H24.741Z'
         fill='#C1694F'
@@ -42,6 +36,3 @@ const BrickIcon = (props: SVGProps<SVGSVGElement>) => {
         fill='#A0041E'
       />
     </svg>
-  );
-};
-export default BrickIcon;

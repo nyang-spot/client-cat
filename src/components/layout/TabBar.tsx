@@ -1,53 +1,40 @@
-import React, { useMemo } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { LayoutTabBar, TabBarItem, TabBarName } from './Layout.style';
-import MapIcon from '@components/layout/Icons/MapIcon';
-import RankingIcon from '@components/layout/Icons/RankingIcon';
-import UploadIcon from '@components/layout/Icons/UploadIcon';
-import MyPageIcon from '@components/layout/Icons/MyPageIcon';
+import React from 'react';
+import { CustomLink, LayoutTabBar, TabBarName } from './Layout.style';
+import Icon from '@components/icon';
 
 const TabBar = () => {
-  const { pathname } = useLocation();
-
-  const TabItem = useMemo(
-    () => [
-      {
-        path: '/main',
-        icon: <MapIcon />,
-        text: '메인',
-        isActive: pathname === '/main',
-      },
-      {
-        path: '/ranking',
-        icon: <RankingIcon />,
-        text: '짱 고양이',
-        isActive: pathname === '/ranking',
-      },
-      {
-        path: '/upload',
-        icon: <UploadIcon />,
-        text: '업로드',
-        isActive: pathname === '/upload',
-      },
-      {
-        path: '/my-page',
-        icon: <MyPageIcon />,
-        text: '집사',
-        isActive: pathname === '/my-page',
-      },
-    ],
-    [pathname]
-  );
+  const TabItem = [
+    {
+      path: '/main',
+      icon: <Icon type='MAP' fill='black' />,
+      text: '메인',
+    },
+    {
+      path: '/ranking',
+      icon: <Icon type='RANK' fill='black' />,
+      text: '짱 고양이',
+    },
+    {
+      path: '/upload',
+      icon: <Icon type='UPLOAD' fill='black' />,
+      text: '업로드',
+    },
+    {
+      path: '/my-page',
+      icon: <Icon type='PERSON' fill='black' />,
+      text: '집사',
+    },
+  ];
   return (
     <LayoutTabBar>
       <ul>
         {TabItem.map((v, i) => (
-          <Link key={i} to={v.path}>
-            <TabBarItem isActive={v.isActive}>
+          <CustomLink key={i} to={v.path}>
+            <li style={{textAlign:'center'}}>
               {v.icon}
               <TabBarName>{v.text}</TabBarName>
-            </TabBarItem>
-          </Link>
+            </li>
+          </CustomLink>
         ))}
       </ul>
     </LayoutTabBar>
