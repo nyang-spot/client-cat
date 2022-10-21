@@ -2,8 +2,8 @@ import React, { useCallback } from 'react';
 import { Cat } from '@models/cat';
 import { CatInfoBox, Container, Description, Image, ImageWrapper, LikeButton, LikeText } from './CatDetail.style';
 import { UseLike } from '@hooks/useLike';
-import HeartIcon from '@components/Ranking/Icons/HeartIcon';
 import defaultImg from '../../assets/images/defaultImg.png';
+import Icon from '@components/icon';
 
 interface Props {
   cat: Cat;
@@ -30,7 +30,7 @@ const CatDetail = ({ cat }: Props) => {
         <LikeButton onClick={onLike}>Like</LikeButton>
       ) : (
         <LikeText>
-          <HeartIcon /> {cat._count.likes}
+          <Icon type='HEART'/> {cat._count.likes}
         </LikeText>
       )}
     </Container>
