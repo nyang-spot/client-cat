@@ -1,6 +1,6 @@
 import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
-import Background from '../../assets/login_background.svg';
+import Background from '@assets/icons/login_background.svg';
 
 const show = keyframes`
   0% {

@@ -1,7 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Container } from './UploadMap.style';
-import { marker, cat3, locationImg } from '../../assets';
 import { PostData } from '@models/postData';
+import Icon from '@components/icon';
+import { IMAGE_PATH } from '@utils/assets';
 
 interface Props {
   setForm: React.Dispatch<React.SetStateAction<PostData>>;
@@ -10,7 +11,7 @@ interface Props {
   defaultLocation: {
     latitude: number;
     longitude: number;
-  }
+  };
 }
 
 const UploadMap = ({ setForm, addressValid, address, defaultLocation }: Props) => {
@@ -100,13 +101,14 @@ const UploadMap = ({ setForm, addressValid, address, defaultLocation }: Props) =
         onTouchStart={handleMapClicked}
       >
         <div className='marker'>
-          <img src={marker} />
+          <Icon type='MARKER' />
         </div>
       </div>
       <div className='address-area'>
         <div className='comment'>
           <span className='small'>선택된 지역 : </span> {address}
         </div>
+        {/* {locationLoading ? <Icon type='CAT3' /> : <img src={IMAGE_PATH.LOCATION} onClick={handleLocationButton} />} */}
         {/* <img src={locationLoading ? cat3 : locationImg} onClick={handleLocationButton} /> */}
       </div>
       {addressValid ? '' : <div className='warning'>&#8251; 내 지역의 고양이만 등록할 수 있어요</div>}

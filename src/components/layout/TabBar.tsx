@@ -6,22 +6,22 @@ const TabBar = () => {
   const TabItem = [
     {
       path: '/main',
-      icon: <Icon type='MAP' />,
+      icon: <Icon type='MAP' fill='black' />,
       text: '메인',
     },
     {
       path: '/ranking',
-      icon: <Icon type='RANK' />,
+      icon: <Icon type='RANK' fill='black' />,
       text: '짱 고양이',
     },
     {
       path: '/upload',
-      icon: <Icon type='UPLOAD' />,
+      icon: <Icon type='UPLOAD' fill='black' />,
       text: '업로드',
     },
     {
       path: '/my-page',
-      icon: <Icon type='PERSON' />,
+      icon: <Icon type='PERSON' fill='black' />,
       text: '집사',
     },
   ];

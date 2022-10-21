@@ -23,7 +23,7 @@ export const Container = styled.div`
       height: 3.5rem;
       pointer-events: none;
 
-      img {
+      svg {
         width: inherit;
         height: inherit;
       }

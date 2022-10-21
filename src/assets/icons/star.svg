@@ -1,9 +1,4 @@
-/* eslint-disable react/react-in-jsx-scope */
-import { SVGProps } from 'react';
-
-const StarIcon = (props: SVGProps<SVGSVGElement>) => {
-  return (
-    <svg {...props} xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'>
+  <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'>
       <g>
         <path d='M10.0126 10.9921L10.0115 10.9927L10.0123 10.9941L10.0134 10.9935L10.0126 10.9921Z' fill='#808080' />
         <path d='M10.013 10.9924H10.0121V10.9933H10.013V10.9924Z' fill='#808080' />
@@ -25,6 +20,3 @@ const StarIcon = (props: SVGProps<SVGSVGElement>) => {
         </clipPath>
       </defs>
     </svg>
-  );
-};
-export default StarIcon;
