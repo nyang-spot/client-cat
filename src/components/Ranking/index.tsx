@@ -13,11 +13,7 @@ const Ranking = () => {
       <RankTitle>
         <RankLocationHighlight>강남구</RankLocationHighlight> 짱 고양이
       </RankTitle>
-      <div
-        style={{
-          marginTop: 50,
-        }}
-      >
+      <div tw='pt-10'>
         <TopRankSection cats={cats} />
       </div>
       <div

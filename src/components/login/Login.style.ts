@@ -1,5 +1,5 @@
 import { keyframes } from '@emotion/react';
-import styled from '@emotion/styled';
+import { styled } from 'twin.macro';
 import Background from '../../assets/login_background.svg';
 
 const show = keyframes`

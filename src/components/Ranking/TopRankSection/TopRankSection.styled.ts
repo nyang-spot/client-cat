@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import { styled } from 'twin.macro';
 
 export const TopRankContainer = styled.section`
   display: flex;
