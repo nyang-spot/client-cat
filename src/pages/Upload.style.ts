@@ -1,14 +1,14 @@
-import styled from "@emotion/styled";
+import { styled } from 'twin.macro';
 
 export const UploadForm = styled.form`
-  color: #40444A;
+  color: #40444a;
   font-style: normal;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   width: 100%;
   height: 100%;
-  
+
   h1 {
     font-size: 26px;
     font-weight: 500;
@@ -20,14 +20,14 @@ export const UploadForm = styled.form`
     margin-bottom: 20px;
 
     .small {
-      color: #B3ABBC;
+      color: #b3abbc;
       font-size: 14px;
       margin-top: 4px;
     }
   }
 
   span {
-      color: #E8B273;
+    color: #e8b273;
   }
 
   .cat-area {
@@ -37,7 +37,7 @@ export const UploadForm = styled.form`
     margin-bottom: 50px;
 
     textarea {
-      background: #F5F5F5;
+      background: #f5f5f5;
       font-size: 10px;
       font-family: inherit;
       padding: 14px;
@@ -59,7 +59,7 @@ export const UploadForm = styled.form`
     color: white;
     justify-self: flex-end;
     align-self: center;
-    background-color: #E8B273;
+    background-color: #e8b273;
     width: 10rem;
     height: 3rem;
     margin-top: 1.5rem;
@@ -67,7 +67,7 @@ export const UploadForm = styled.form`
     padding: 0.5em 1em;
 
     :disabled {
-      background-color: #B3ABBC;
+      background-color: #b3abbc;
     }
   }
 `;
@@ -76,7 +76,7 @@ export const ImageLoader = styled.label`
   width: 100px;
   height: 100px;
   position: relative;
-  
+
   &:hover {
     cursor: pointer;
   }
@@ -86,7 +86,7 @@ export const ImageLoader = styled.label`
     height: inherit;
     object-fit: cover;
   }
-  
+
   input {
     display: none;
   }

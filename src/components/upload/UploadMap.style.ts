@@ -1,9 +1,9 @@
-import styled from "@emotion/styled";
+import { styled } from 'twin.macro';
 
 export const Container = styled.div`
   width: 100%;
   height: 21rem;
-  
+
   #map {
     position: relative;
     height: 16rem;

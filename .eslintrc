@@ -9,6 +9,7 @@
   "parser": "@typescript-eslint/parser",
   "rules": {
     "prettier/prettier": "off",
-    "react/no-unknown-property": ["error", { "ignore": ["css"] }]
+    "import/no-extraneous-dependencies": ["off", { "ignore": ["twin.macro"] }],
+    "react/no-unknown-property": ["off", { "ignore": ["css", "tw"] }]
   }
 }

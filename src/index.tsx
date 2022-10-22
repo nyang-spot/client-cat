@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import { Global, ThemeProvider } from '@emotion/react';
-import { globalStyle } from 'global.style';
+import { ThemeProvider } from '@emotion/react';
+import './styles/global.css';
 import theme from '@utils/theme';
 
 const queryClient = new QueryClient();
@@ -14,7 +14,6 @@ root.render(
   <BrowserRouter>
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
-        <Global styles={globalStyle} />
         <App />
       </ThemeProvider>
     </QueryClientProvider>

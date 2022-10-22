@@ -1,5 +1,5 @@
 {
-  "presets": [["react-app", { "flow": false, "typescript": true }], ["@emotion/babel-preset-css-prop"]],
+  "presets": [["react-app", { "flow": false, "typescript": true }]],
   "plugins": [
     [
       "@emotion/babel-plugin-jsx-pragmatic",
@@ -14,6 +14,7 @@
       {
         "pragma": "to_avoidprepending/** @jsxImportSource @emotion/react */"
       }
-    ]
+    ],
+    "babel-plugin-twin"
   ]
 }

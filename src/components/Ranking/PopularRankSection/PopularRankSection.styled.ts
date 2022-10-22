@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import { styled } from 'twin.macro';
 
 export const PopularRankImage = styled.div`
   border-radius: 100%;

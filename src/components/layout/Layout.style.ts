@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import { styled } from 'twin.macro';
 import { NavLink } from 'react-router-dom';
 
 export const LayoutWrapper = styled.main`

@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import { styled } from 'twin.macro';
 
 export const RankLocationHighlight = styled.span`
   color: #e8b273;
