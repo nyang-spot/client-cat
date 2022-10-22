@@ -1,46 +1,72 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 🐈 냥스팟
+<img src="https://i.imgur.com/uBrgjuL.png" width="80%" /> 
 
-## Available Scripts
 
-In the project directory, you can run:
+👉 url : http://nyang-spot.s3-website.ap-northeast-2.amazonaws.com/
 
-### `npm start`
+## 🚀 intro: 서비스 소개
+평소에 그냥 지나치는 길고양이들의 매력을 사용자들에게 공유하는 서비스
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+사진을 찍어 귀여운 고양이를 기록하고 우리 동네 인기 고양이를 선정할 수 있습니다.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#### 📷 Demo
+![냥스팟](https://user-images.githubusercontent.com/77040128/196184662-7ae4fab2-9651-4c09-9432-0d687aa51340.gif)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 💻 Preview : 주요 화면
+<div style="display:inline">
+<img src="https://i.imgur.com/g8ZjG4N.png" height="350" />
+<img src="https://i.imgur.com/7gf5dcV.png" height="350" />
+<img src="https://i.imgur.com/q1hXv2Y.png" height="350" />
+<img src="https://i.imgur.com/vD9c7UQ.png" height="350" />
+</div>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### 1. 로그인
+임시 아이디 발급 기능
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+데모에서는 소셜로그인 대신 임시 아이디를 사용하여 로그인할 수 있습니다.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### 2. 메인 페이지
+서버내 등록된 우리동네 모든 고양이 리스트를 메인 페이지에 마커로 표시해 줍니다.
+    
+해당 마커 클릭 시 사용자의 view 가 현재 마커 위치로 표시되고 해당 고양이의 상세 정보가 하단에 표시되게 됩니다.
 
-## Learn More
+하단의 좋아요 버튼 클릭 시 우리 동네 인기 고양이에게 투표 할 수 있어요!
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+### 3.짱 고양이
+ 서버내 등록된 우리동네 고양이들을 좋아요 순으로 랭킹 페이지에 리스트로 표시합니다.
+ 
+ #### 1위 후보
+ 좋아요가 가장 많은 고양이 2마리를 최상위에서 사용자에게 표시줍니다.
+ 
+ #### 구역에서 가장 인기 있는 고양이
+ 검색 구역의 가장 인기 있는 고양이의 리스트를 사용자에게 표시합니다.
+ 
+
+### 4.업로드
+
+길고양이 위치를 지정하여 사진 업로드 
+
+지도 중앙에 마커를 이용해서 손쉽게 고양이의 위치를 지정할 수 있습니다.
+
+
+<br />
+
+
+## ⛏️ Skill Set: 기술 스택
+- language : <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" height="23" />
+- libarary :  <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" height="23" />, <img src="https://img.shields.io/badge/-React%20Query-FF4154?style=for-the-badge&logo=react%20query&logoColor=white" height="23">, <img src="https://img.shields.io/badge/Naver%20MAP%20API-%2318A303?style=for-the-badge" height="23" />, <img src="https://img.shields.io/badge/Emotion-FF4154?style=for-the-badge" height="23" />
+- deploy : <img src="https://img.shields.io/badge/AWS%20S3-FF9900.svg?style=for-the-badge&logo=Amazon%20S3&logoColor=white" height="23" />
+
+
+
+    

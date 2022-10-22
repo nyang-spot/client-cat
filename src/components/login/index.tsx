@@ -1,12 +1,11 @@
-import login_btn from '../../assets/kakao_icon.png';
-import { ReactComponent as LogoImg } from '../../assets/logo_img.svg';
-
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import http from '@apis/http';
 
 import { Alert, LogoImgWrapper, DescriptionWrapper, LoginBtn, LoginBtnWrapper, LoginWrapper } from './Login.style';
+import Icon from '@components/icon';
+import { IMAGE_PATH } from '@utils/assets';
 
 const LoginLayout = () => {
   const navi = useNavigate();
@@ -45,7 +44,7 @@ const LoginLayout = () => {
     <LoginWrapper>
       <Alert style={isAlertOn ? { display: 'block' } : { display: 'none' }}>※ 로그인에 실패하였습니다.</Alert>
       <LogoImgWrapper>
-        <LogoImg fill='#000' />
+        <Icon type='LOGO'/>
       </LogoImgWrapper>
       <LoginBtnWrapper>
         <DescriptionWrapper>
@@ -56,7 +55,7 @@ const LoginLayout = () => {
 
         <LoginBtn onClick={handleLogin}>
           {/* svg 사용시 폰트가 깨짐 */}
-          <img src={login_btn} />
+          <img src={IMAGE_PATH.KAKAO} />
         </LoginBtn>
       </LoginBtnWrapper>
     </LoginWrapper>

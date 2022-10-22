@@ -1,6 +1,5 @@
 /* eslint-disable react/react-in-jsx-scope */
-import BrickIcon from '@components/Ranking/Icons/BrickIcon';
-import HeartIcon from '@components/Ranking/Icons/HeartIcon';
+import Icon from '@components/icon';
 import {
   PopularRankLikes,
   PopularRankDescription,
@@ -14,11 +13,7 @@ const PopularRankSection = ({ cats }: { cats: Array<CateResponse> }) => {
   return (
     <section>
       <RankTitleContainer>
-        <BrickIcon
-          style={{
-            marginRight: 5,
-          }}
-        />
+        <Icon type='BRICK' cssProps={{ marginRight: 5 }} />
         <RankSubTitle>
           <RankLocationHighlight>강남구</RankLocationHighlight>에서 가장 인기 있는 냥이들 🥳
         </RankSubTitle>
@@ -42,8 +37,9 @@ const PopularRankSection = ({ cats }: { cats: Array<CateResponse> }) => {
                 alignItems: 'center',
               }}
             >
-              <HeartIcon
-                style={{
+              <Icon
+                type='HEART'
+                cssProps={{
                   marginTop: 1,
                   marginRight: 5,
                 }}

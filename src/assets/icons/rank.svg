@@ -1,10 +1,4 @@
-/* eslint-disable react/react-in-jsx-scope */
-
-import { SVGProps } from 'react';
-
-const RankingIcon = (props: SVGProps<SVGSVGElement>) => {
-  return (
-    <svg {...props} xmlns='http://www.w3.org/2000/svg' width='33' height='33' viewBox='0 0 33 33' fill='none'>
+<svg xmlns='http://www.w3.org/2000/svg' width='33' height='33' viewBox='0 0 33 33' fill='none'>
       <g>
         <path d='M12.0712 8.44158C13.2185 9.07574 14.6166 9.61366 16.2292 9.99864C20.3817 9.98491 23.3231 6.25534 25.6534 2.60607L25.9185 2.12706C24.4698 1.23219 22.8495 0.589789 21.1203 0.258179L20.7634 0.973156C18.6399 4.30009 15.968 7.68806 12.0712 8.44158Z' />
         <path d='M22.3851 17.9835C15.8891 17.9835 10.097 16.19 6.91529 13.7908C5.52601 12.7431 4.77913 11.6447 4.75103 10.6102L4.69218 10.3231C4.32531 11.5865 4.12512 12.9197 4.12512 14.3002C4.12512 14.4234 4.13118 14.5449 4.13447 14.6676L5.35875 16.4936C8.49156 21.1702 15.7917 23.0199 29.0285 22.5007H30.1297C31.3776 20.7242 32.234 18.654 32.5678 16.4144L31.7241 16.6966C28.5869 17.5941 25.4096 17.9835 22.3851 17.9835Z' />
@@ -18,7 +12,4 @@ const RankingIcon = (props: SVGProps<SVGSVGElement>) => {
           <rect width='33' height='33' fill='white' />
         </clipPath>
       </defs>
-    </svg>
-  );
-};
-export default RankingIcon;
+</svg>

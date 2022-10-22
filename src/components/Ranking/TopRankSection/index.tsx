@@ -1,6 +1,5 @@
 /* eslint-disable react/react-in-jsx-scope */
-import HeartIcon from '@components/Ranking/Icons/HeartIcon';
-import StarIcon from '@components/Ranking/Icons/StarIcon';
+import Icon from '@components/icon';
 import { RankLocationHighlight, RankSubTitle, RankTitleContainer } from '@components/Ranking/Rank.style';
 import {
   TopRankBlurBox,
@@ -15,11 +14,7 @@ const TopRankSection = ({ cats }: { cats: Array<CateResponse> }) => {
   return (
     <section>
       <RankTitleContainer>
-        <StarIcon
-          style={{
-            marginRight: 5,
-          }}
-        />
+        <Icon type='STAR' cssProps={{ marginRight: 5 }} />
         <RankSubTitle>
           <RankLocationHighlight>강남구</RankLocationHighlight> 1위 후보 😎
         </RankSubTitle>
@@ -36,11 +31,7 @@ const TopRankSection = ({ cats }: { cats: Array<CateResponse> }) => {
             <TopRankDescriptionContainer>
               <TopRankDescription>{cat.description}</TopRankDescription>
               <TopRankLike>
-                <HeartIcon
-                  style={{
-                    marginRight: 5,
-                  }}
-                />
+                <Icon type='HEART' cssProps={{ marginRight: 5 }} />
                 {cat._count.likes}
               </TopRankLike>
               <TopRankBlurBox />
