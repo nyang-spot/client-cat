@@ -36,7 +36,7 @@ export const Image = styled.img`
 
 export const Description = styled.div``;
 
-export const LikeButton = styled.button`
+export const Button = styled.button`
   padding: 8px 12px;
   border-radius: 8px;
   background-color: #fabe93;
@@ -44,5 +44,8 @@ export const LikeButton = styled.button`
 `;
 
 export const LikeText = styled.span`
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-weight: bold;
 `;

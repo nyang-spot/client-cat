@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 import { Cat } from '@models/cat';
-import { CatInfoBox, Container, Description, Image, ImageWrapper, LikeButton, LikeText } from './CatDetail.style';
+import { Container } from './CatDetail.style';
 import { UseLike } from '@hooks/useLike';
-import defaultImg from '../../assets/images/defaultImg.png';
-import Icon from '@components/icon';
+import InfoBox from '@components/atoms/info-box';
+import LikeButton from '@components/atoms/like-button';
 
 interface Props {
   cat: Cat;
@@ -20,19 +20,8 @@ const CatDetail = ({ cat }: Props) => {
 
   return (
     <Container>
-      <CatInfoBox>
-        <ImageWrapper>
-          <Image src={isValidUrl ? cat?.image ?? defaultImg : defaultImg} />
-        </ImageWrapper>
-        <Description>{cat.description}</Description>
-      </CatInfoBox>
-      {!cat.isLiked ? (
-        <LikeButton onClick={onLike}>Like</LikeButton>
-      ) : (
-        <LikeText>
-          <Icon type='HEART'/> {cat._count.likes}
-        </LikeText>
-      )}
+      <InfoBox isValidUrl={isValidUrl} image={cat?.image} description={cat.description} />
+      <LikeButton isLiked={cat.isLiked} onLike={onLike} likes={cat._count.likes} />
     </Container>
   );
 };
